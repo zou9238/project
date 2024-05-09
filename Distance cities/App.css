@@ -1,0 +1,65 @@
+﻿/*styling.css*/
+/*add font family, background image*/
+
+body {
+  color: #5bc0de;
+  font-family: "Poppins", sans-serif;
+}
+
+.fa-map-marker-alt,
+.fa-dot-circle {
+  color: #5bc0de;
+}
+
+/*Jumbotron*/
+.jumbotron {
+  background-color: transparent;
+  margin: 0;
+  padding: 10px;
+}
+
+.jumbotron h1 {
+  letter-spacing: 2.5px;
+  font-size: 3.5em;
+}
+
+.jumbotron h1,
+.jumbotron p {
+  text-align: center;
+}
+
+/*map*/
+#googleMap {
+  float: left;
+  width: 60%;
+  height: 400px;
+  margin-left: 15%;
+}
+
+/*output box*/
+#output {
+  text-align: center;
+  font-size: 2em;
+  margin: 20px;
+}
+
+#mode {
+  color: black;
+}
+
+#recommendations {
+  float: right;
+  max-height: 400px;
+  max-width: 20%;
+  margin-right: 10%;
+  overflow-y: auto;
+}
+
+#travelList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 自動調整列數，最小寬度為200px */
+  grid-gap: 10px; /* 設置間距 */
+  padding: 0;
+  list-style: none;
+}
+
