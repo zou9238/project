@@ -1,0 +1,22 @@
+steps:
+  - id: 'Build the ui library'
+    name: node
+    entrypoint: npm
+    args: [ 'ci' ]
+  - id: 'Build the ui binary'
+    name: node
+    entrypoint: npm
+    args: ['run', 'build']
+  - id: 'Build container image'
+    name: 'gcr.io/cloud-builders/docker'
+    args: [ 'build', '--no-cache', '-t', 'asia-east1-docker.pkg.dev/$PROJECT_ID/nutc/csie/ajax/frontend_example:$BRANCH_NAME-$SHORT_SHA', '-f', 'Dockerfile', '.' ]
+  - id: 'push container image to artifact registry'
+    name: 'gcr.io/cloud-builders/docker'
+    args: [ 'push', 'asia-east1-docker.pkg.dev/$PROJECT_ID/nutc/csie/ajax/frontend_example:$BRANCH_NAME-$SHORT_SHA' ]
+  ##- name: 'gcr.io/cloud-builders/gcloud'
+  ##  args: [ 'artifacts', 'docker', 'tags', 'delete', 'asia-east1-docker.pkg.dev/$PROJECT_ID/ga-erp/up:latest' ]
+  - id: 'tag container image to latest'
+    name: 'gcr.io/cloud-builders/gcloud'
+    args: [ 'artifacts', 'docker', 'tags', 'add', 'asia-east1-docker.pkg.dev/$PROJECT_ID/nutc/csie/ajax/frontend_example:$BRANCH_NAME-$SHORT_SHA', 'asia-east1-docker.pkg.dev/$PROJECT_ID/nutc/csie/ajax/frontend_example:latest' ]
+
+

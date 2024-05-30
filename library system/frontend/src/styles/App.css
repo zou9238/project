@@ -1,0 +1,55 @@
+  .HomeContent {
+    text-align: center;
+    background-color: #DED0B6;
+  }
+  div {
+    display: inline-block;
+    width: 100%;
+  }
+  .cam_window {
+    float: left;
+    display: flex;
+  }
+  .video_window {
+    float: right;
+    display: flex;
+  }
+  .ButtonStyle{
+    background-color: #B2A59B;
+    border-radius: 5px;
+    border: 1px solid #607274;
+    padding: 5px;
+    margin: 5px;
+    float: right;
+  }
+  .ButtonStyle:hover{
+    background-color: #756b64;
+    color: #000000;
+    border-radius: 5px;
+    border: 1px solid #607274;
+    padding: 5px;
+    margin: 5px;
+    float: right;
+  }
+
+.navbarStyle {
+  background-color: #607274;
+ }
+ 
+.BTableStyle{
+  background-color: #FAEED1;
+  size: auto;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  font-size: large;
+  text-align: center;
+}
+.BTableStyle tr:hover{
+  background-color: #d5d5bf;
+  border: none;
+  padding: 5px;
+  font-size: large;
+}
+
